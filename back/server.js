@@ -11,7 +11,9 @@ const app = express();
 
 // Import Routes
 const authRoutes = require('./routes/auth')
-const userRoutes = require('./routes/user')
+const userRoutes = require('./routes/user');
+const productRoutes = require("./routes/products");
+
 
 // Connect Database
 connectDB();
@@ -26,6 +28,8 @@ app.use(cors());
 // routes middleware
 app.use("/api" ,authRoutes);
 app.use("/api" ,userRoutes);
+app.use("/api" ,productRoutes);
+
 
 const PORT = process.env.PORT || 8000;
 
